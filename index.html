@@ -10,15 +10,14 @@
 	<link rel="stylesheet" type="text/css" href="http://freetomelbourne.org/wp-content/themes/Tesseract/css/site-banner.css?ver=1.0.0">
 	<link rel="stylesheet" type="text/css" href="http://freetomelbourne.org/wp-content/themes/Tesseract/css/footer-banner.css?ver=1.0.0">
 	<link rel="stylesheet" type="text/css" href="http://freetomelbourne.org/wp-includes/css/dashicons.min.css?ver=72387db91d893c25521abf89d08b0f6a">
+	<script type='text/javascript' src='http://freetomelbourne.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+	<!-- end parent website -->
 
 	<link rel="stylesheet" type="text/css" href="theme.css">
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
-	<script type="text/javascript" src="//janiduw.checkfront.com/lib/interface--31.js"></script>
-
-
-	<script type='text/javascript' src='http://freetomelbourne.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-  <script src="jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="http://janiduw.checkfront.com/lib/interface--31.js"></script>
+	<script src="jquery.modal.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 
@@ -31,16 +30,16 @@
 				</div>
 			</div>
 			<div class="cclass-name"><h2>{{ item.name }}</h2></div>
-			<div class="cclass-price">$80</div>
-			<div class="cclass-description">{{ item.details }}</div>
-			<div class="cclass-frequency">Every Thursday 7800 pm</div>
-			<div class="cclass-duration">3 hours</div>
-			<div class="cclass-more-info"><a v-bind:href="item.url"> More Info </a></div>
+			<div class="cclass-price">{{ item.rate.summary.price.total }}</div>
+			<div class="cclass-description" v-html="item.summary"></div>
+			<div class="cclass-more-info"><a v-if="item.url" v-bind:href="item.url"> More Info </a></div>
 			<a class="cclass-join-button" v-on:click="bookNow(item.item_id)" rel="modal:open" href="#modalCheckfront">Join</a>
 		</div>
 	</div>
 	<div class="modal" id="modalCheckfront" style="display:none;">
-		<h2>Modal Window</h2>
+		<div class="modal-title">
+			<h2>Join a class</h2>
+		</div>
 		<div id="CHECKFRONT_WIDGET_01">
 			<p id="CHECKFRONT_LOADER" style="background: url('//janiduw.checkfront.com/images/loader.gif') left center no-repeat; padding: 5px 5px 5px 20px">Searching Availability...</p>
 		</div>
