@@ -1,47 +1,57 @@
+#class-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+
 .cclass-box {
-	height: 300px;
-	width: 250px;
-	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
 	background-color: #fff;
 	margin: 10px 10px;
-	display: block;
-	float: left;
+	width: 100%;
 }
 
-.cclass-description-box {
-	font-size: 9pt;
-	margin: 8px;
+@media (min-width: 768px) {
+	.cclass-box {
+		width: 250px;
+	}
 }
 
-.cclass-name {
-	font-size: 12pt;
-	font-weight: bold;
+.cclass-name h2 {
+	margin: 0;
 }
-
-.cclass-price {
-	font-size: 14pt;
-	float: right;
-}
-
-.cclass-description {}
 
 .cclass-image-box {
 	height: 200px;
 	overflow: hidden;
 }
 
-.cclass-image {
+.cclass-image-box img {
 	width: 100%;
-	height: 100%;
+	/*height: 200px;*/
+	overflow: hidden;
 }
 
 .cclass-join-button {
-	float: right;
+	display: block;
+	border-radius: 5px;
+	text-align: center;
+	padding: 6px 8px;
+	margin: 10px;
+	margin-top: auto;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;    
+    color: #666;
+    border-color: #EBEBEB;
+    background-color: #EBEBEB;
 }
 
-.cclass-more-info {
-	font-weight: bold;
-	text-decoration: underline;
+.cclass-join-button:hover {
+	background-color: #bbbbbb;
+	color: #efefef;
 }
 
 .jquery-modal {
@@ -51,7 +61,11 @@
 }
 
 .modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 	background-color: white;
 	max-width: 500px;
-	margin: 0 auto;
+	
 }
