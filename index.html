@@ -19,13 +19,10 @@
 					</div>
 				</div>
 				<div class="cclass-description-box">
-					<div class="cclass-price">$80</div>
+					<div class="cclass-price"> {{ item.rate.summary.price.total }} </div>
 					<div class="cclass-name">{{ item.name }}</div>
-					<div class="cclass-description">{{ item.details }}</div>
-					<div class="cclass-frequency">Every Thursday 7800 pm</div>
+					<div class="cclass-description">{{ item.summary }}</div>
 					<button class="cclass-join-button" type="button" v-on:click="bookNow(item.item_id)">Join</button>
-					<div class="cclass-duration">3 hours</div>
-					<div class="cclass-more-info"><a v-bind:href="item.url"> More Info </a></div>
 				</div>
 			</div>
 		</div>
