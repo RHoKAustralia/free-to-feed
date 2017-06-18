@@ -7,6 +7,9 @@
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
 	<script type="text/javascript" src="//janiduw.checkfront.com/lib/interface--31.js"></script>
+	<script type='text/javascript' src='http://freetomelbourne.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+  <script src="jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -23,15 +26,18 @@
 					<div class="cclass-name">{{ item.name }}</div>
 					<div class="cclass-description">{{ item.details }}</div>
 					<div class="cclass-frequency">Every Thursday 7800 pm</div>
-					<button class="cclass-join-button" type="button" v-on:click="bookNow(item.item_id)">Join</button>
+					<button class="cclass-join-button" type="button" v-on:click="bookNow(item.item_id)"><a rel="modal:open" href="#modalCheckfront">Join</a></button>
 					<div class="cclass-duration">3 hours</div>
 					<div class="cclass-more-info"><a v-bind:href="item.url"> More Info </a></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="CHECKFRONT_WIDGET_01">
-		<p id="CHECKFRONT_LOADER" style="background: url('//janiduw.checkfront.com/images/loader.gif') left center no-repeat; padding: 5px 5px 5px 20px">Searching Availability...</p>
+	<div class="modal" id="modalCheckfront" style="display:none;">
+		<h2>Modal Window</h2>
+		<div id="CHECKFRONT_WIDGET_01">
+			<p id="CHECKFRONT_LOADER" style="background: url('//janiduw.checkfront.com/images/loader.gif') left center no-repeat; padding: 5px 5px 5px 20px">Searching Availability...</p>
+		</div>
 	</div>
 </body>
 

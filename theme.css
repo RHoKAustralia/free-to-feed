@@ -1,46 +1,57 @@
 .cclass-box {
-			height: 300px;
-			width: 250px;
-			border: 1px solid black;
-			background-color: #fff;
-			margin: 10px 10px;
-			display: block;
-			float: left;
-		}
+	height: 300px;
+	width: 250px;
+	border: 1px solid black;
+	background-color: #fff;
+	margin: 10px 10px;
+	display: block;
+	float: left;
+}
 
-		.cclass-description-box {
-			font-size: 9pt;
-			margin: 8px;
-		}
+.cclass-description-box {
+	font-size: 9pt;
+	margin: 8px;
+}
 
-		.cclass-name {
-			font-size: 12pt;
-			font-weight: bold;
-		}
+.cclass-name {
+	font-size: 12pt;
+	font-weight: bold;
+}
 
-		.cclass-price {
-			font-size: 14pt;
-			float: right;
-		}
+.cclass-price {
+	font-size: 14pt;
+	float: right;
+}
 
-		.cclass-description {}
+.cclass-description {}
 
-		.cclass-image-box {
-			height: 200px;
-			overflow: hidden;
-		}
+.cclass-image-box {
+	height: 200px;
+	overflow: hidden;
+}
 
-		.cclass-image {
-			width: 100%;
-			height: 100%;
-		}
+.cclass-image {
+	width: 100%;
+	height: 100%;
+}
 
-		.cclass-join-button {
-			float: right;
-		}
+.cclass-join-button {
+	float: right;
+}
 
-		.cclass-more-info {
-			font-weight: bold;
-			text-decoration: underline;
-			;
-		}
+.cclass-more-info {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.jquery-modal {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+	background-color: white;
+	max-width: 500px;
+	margin: 0 auto;
+}
