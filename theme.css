@@ -24,6 +24,7 @@ html {
 @media (min-width: 768px) {
 	.cclass-box {
 		width: 250px;
+		flex: 0 0 31%;
 	}
 }
 
