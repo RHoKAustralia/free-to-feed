@@ -1,10 +1,15 @@
-var currentDate = new Date().toISOString();
+const currentDate = new Date().toISOString();
 
-var classGetUrl = 'https://janiduw.checkfront.com/api/3.0/item?category_id=5&start_date=' + encodeURI(currentDate);
-var experienceGetUrl = 'https://janiduw.checkfront.com/api/3.0/item?category_id=4&start_date=' + encodeURI(currentDate);
+const baseCheckfrontApiUrl = 'https://freeto.checkfront.com/api/3.0';
 
-var data = {
-    baseUrl: "https://janiduw.checkfront.com",
+const classCategoryId = '1';
+const experienceCategoryId = '4';
+
+const classGetUrl = `${baseCheckfrontApiUrl}/item?category_id=${classCategoryId}&start_date=${encodeURI(currentDate)}`;
+const experienceGetUrl = `${baseCheckfrontApiUrl}/item?category_id=${experienceCategoryId}&start_date=${encodeURI(currentDate)}`;
+
+const data = {
+    baseUrl: baseCheckfrontApiUrl,
     classList: null,
     experienceList: null
 };
@@ -21,7 +26,7 @@ Vue.http.get(experienceGetUrl).then(function (response) {
     console.log(error.statusText);
 });
 
-var classList = new Vue({
+const classList = new Vue({
     el: '#class-list',
     data: data,
     methods: {
@@ -30,9 +35,8 @@ var classList = new Vue({
 });
 
 function bookNow(itemId, event) {
-    console.log("Clicked Item Id" + itemId);
     new DROPLET.Widget({
-        host: 'janiduw.checkfront.com',
+        host: 'freeto.checkfront.com',
         target: 'CHECKFRONT_WIDGET_01',
         item_id: itemId,
         provider: 'droplet'
