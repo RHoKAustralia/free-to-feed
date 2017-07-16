@@ -3,7 +3,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hello World</title>
+	<title>Free To Feed</title>
 
 	<!-- Parent website -->
 	<link rel="stylesheet" type="text/css" href="http://freetomelbourne.org/env1/wp-content/themes/tesseract-free-theme/style.css?ver=1.0.0">
@@ -25,14 +25,12 @@
 	<div id="class-list">
 		<div class="cclass-box" v-for="item of classList">
 			<div class="cclass-image-box">
-				<div v-for="image of item.image">
+				<div v-for="image of item.image" v-if="image.title === 'chef'">
 					<img v-bind:src="baseUrl + '/' +image.path">
 				</div>
 			</div>
 			<div class="cclass-name"><h2>{{ item.name }}</h2></div>
-			<div class="cclass-price">{{ item.rate.summary.price.total }}</div>
 			<div class="cclass-description" v-html="item.summary"></div>
-			<div class="cclass-more-info"><a v-if="item.url" v-bind:href="item.url"> More Info </a></div>
 			<a class="cclass-join-button" v-on:click="bookNow(item.item_id)" rel="modal:open" href="#modalCheckfront">Join</a>
 		</div>
 	</div>

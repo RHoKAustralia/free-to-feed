@@ -1,15 +1,16 @@
 const currentDate = new Date().toISOString();
 
-const baseCheckfrontApiUrl = 'https://freeto.checkfront.com/api/3.0';
+const checkfrontBaseUrl = 'https://freeto.checkfront.com';
+const baseCheckfrontApiUrl = `${checkfrontBaseUrl}/api/3.0`;
 
 const classCategoryId = '1';
 const experienceCategoryId = '4';
 
-const classGetUrl = `${baseCheckfrontApiUrl}/item?category_id=${classCategoryId}&start_date=${encodeURI(currentDate)}`;
+const classGetUrl = `${baseCheckfrontApiUrl}/item?category_id=${classCategoryId}`;
 const experienceGetUrl = `${baseCheckfrontApiUrl}/item?category_id=${experienceCategoryId}&start_date=${encodeURI(currentDate)}`;
 
 const data = {
-    baseUrl: baseCheckfrontApiUrl,
+    baseUrl: checkfrontBaseUrl,
     classList: null,
     experienceList: null
 };
